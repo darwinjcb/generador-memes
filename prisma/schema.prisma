@@ -12,3 +12,15 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Meme {
+  id          Int      @id @default(autoincrement())
+  title       String   @unique // Título o nombre del meme
+  description String? // Descripción opcional del meme
+  imageUrl    String // URL de la imagen del meme
+  isTrending  Boolean  @default(false) // Si el meme es tendencia
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  creatorName String? // Nombre opcional del creador del meme
+  likes       Int      @default(0) // Cantidad de 'likes' el el meme
+}
