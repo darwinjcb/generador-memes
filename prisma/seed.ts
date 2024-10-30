@@ -45,7 +45,7 @@ async function main() {
 
     });
     console.log({ meme01, newmeme01 });
-    
+}
     /* Ejecutar la función 'main': */
     main()
         .catch((e) => {
@@ -56,5 +56,3 @@ async function main() {
             // close Prisma Client at the end
             await prisma.$disconnect();
         });
-
-}
